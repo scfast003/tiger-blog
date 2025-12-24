@@ -36,10 +36,11 @@ export default function Card({ children, order, width, height, x, y, className }
 		return (
 			<motion.div
 				className={cn('card', className)}
-				initial={{ opacity: 0, scale: 0.6, left: x, top: y, width, height }}
+				initial={{ opacity: 0, scale: 0.95, left: x, top: y, width, height }}
 				animate={{ opacity: 1, scale: 1, left: x, top: y, width, height }}
-				whileHover={{ scale: 1.05 }}
-				whileTap={{ scale: 0.95 }}>
+				transition={{ duration: 0.25, ease: 'easeOut' }}
+				whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+				whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}>
 				{children}
 			</motion.div>
 		)

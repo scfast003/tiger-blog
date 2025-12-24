@@ -58,18 +58,18 @@ export default function Home() {
 
 			{editing && (
 				<div className='pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center pt-6'>
-					<div className='pointer-events-auto flex items-center gap-3 rounded-2xl bg-white/80 px-4 py-2 shadow-lg backdrop-blur'>
+					<div className='pointer-events-auto flex items-center gap-3 rounded-lg bg-white/90 px-4 py-2 shadow-lg backdrop-blur'>
 						<span className='text-xs text-gray-600'>正在编辑首页布局，拖拽卡片调整位置</span>
 						<div className='flex gap-2'>
 							<motion.button
 								type='button'
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
+								whileHover={{ scale: 1.02, transition: { duration: 0.15 } }}
+								whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
 								onClick={handleCancel}
-								className='rounded-xl border bg-white px-3 py-1 text-xs font-medium text-gray-700'>
+								className='rounded-lg border bg-white px-3 py-1 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50'>
 								取消
 							</motion.button>
-							<motion.button type='button' whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleSave} className='brand-btn px-3 py-1 text-xs'>
+							<motion.button type='button' whileHover={{ scale: 1.02, transition: { duration: 0.15 } }} whileTap={{ scale: 0.98, transition: { duration: 0.1 } }} onClick={handleSave} className='brand-btn px-3 py-1 text-xs'>
 								保存偏移
 							</motion.button>
 						</div>

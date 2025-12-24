@@ -5,14 +5,14 @@
 		"username": "Suni"
 	},
 	"theme": {
-		"colorBrand": "#de4331",
-		"colorPrimary": "#4E3F42",
-		"colorSecondary": "#7b888e",
-		"colorBrandSecondary": "#FCC841",
-		"colorBg": "#eeeeee",
-		"colorBorder": "#ffffff",
-		"colorCard": "#ffffff66",
-		"colorArticle": "#ffffffcc"
+		"colorBrand": "#1e3a5f",
+		"colorPrimary": "#1a1a1a",
+		"colorSecondary": "#8c8c8c",
+		"colorBrandSecondary": "#c9a227",
+		"colorBg": "#f8f9fa",
+		"colorBorder": "#e5e5e5",
+		"colorCard": "#ffffffdd",
+		"colorArticle": "#ffffffee"
 	},
 	"backgroundColors": [
 		"#FCC841",
