@@ -34,7 +34,7 @@ export default function ArtCard() {
 					</>
 				)}
 
-				<img onClick={() => router.push('/pictures')} src={artUrl} alt='wall art' className='h-full w-full rounded-[32px] object-cover' />
+				<img onClick={() => router.push('/pictures')} src={artUrl} alt='wall art' className='h-full w-full rounded-lg object-cover' />
 			</Card>
 		</HomeDraggableLayer>
 	)
