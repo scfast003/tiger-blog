@@ -1,15 +1,15 @@
 @theme {
-	--color-primary: #334f52;
-	--color-secondary: #7b888e;
-	--color-brand-secondary: #1fc9e7;
-	--color-bg: #eeeeee;
-	--color-border: #fff;
-	--color-brand: #35bfab;
-	--color-card: #ffffff66;
-	--color-article: #ffffffcc;
+	--color-primary: #1a1a1a;
+	--color-secondary: #8c8c8c;
+	--color-brand-secondary: #c9a227;
+	--color-bg: #f8f9fa;
+	--color-border: #e5e5e5;
+	--color-brand: #1e3a5f;
+	--color-card: #ffffffdd;
+	--color-article: #ffffffee;
 
-	--font-averia: 'Averia Gruesa Libre', sans-serif;
+	--font-averia: 'Inter', 'Source Sans Pro', sans-serif;
 	--font-sans:
-		'PingFang SC', -apple-system, system-ui, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif, BlinkMacSystemFont, 'Helvetica Neue',
+		'Inter', 'Source Sans Pro', -apple-system, system-ui, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif, BlinkMacSystemFont, 'Helvetica Neue',
 		'Hiragino Sans GB', 'Microsoft YaHei', Arial;
 }

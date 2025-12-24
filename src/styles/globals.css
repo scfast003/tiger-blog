@@ -41,19 +41,19 @@
 		appearance: none;
 		height: 6px;
 		border-radius: 9999px;
-		background: linear-gradient(90deg, var(--color-brand) 0%, color-mix(in srgb, var(--color-brand) 50%, transparent) 100%);
+		background: linear-gradient(90deg, var(--color-brand) 0%, color-mix(in srgb, var(--color-brand) 40%, transparent) 100%);
 	}
 
 	.range-track::-webkit-slider-runnable-track {
 		height: 6px;
 		border-radius: 9999px;
-		background: linear-gradient(90deg, 0%, color-mix(in srgb, var(--color-brand) 50%, transparent) 100%);
+		background: linear-gradient(90deg, var(--color-brand) 0%, color-mix(in srgb, var(--color-brand) 40%, transparent) 100%);
 	}
 
 	.range-track::-moz-range-track {
 		height: 6px;
 		border-radius: 9999px;
-		background: linear-gradient(90deg, var(--color-brand) 0%, color-mix(in srgb, var(--color-brand) 50%, transparent) 100%);
+		background: linear-gradient(90deg, var(--color-brand) 0%, color-mix(in srgb, var(--color-brand) 40%, transparent) 100%);
 	}
 
 	.range-track::-webkit-slider-thumb {
@@ -64,7 +64,7 @@
 		background: var(--color-brand);
 		border: 2px solid white;
 		margin-top: -5px;
-		box-shadow: 0 5px 12px color-mix(in srgb, var(--color-brand) 50%, transparent);
+		box-shadow: 0 2px 8px color-mix(in srgb, var(--color-brand) 40%, transparent);
 	}
 
 	.range-track::-moz-range-thumb {
@@ -73,7 +73,7 @@
 		border-radius: 9999px;
 		background: var(--color-brand);
 		border: 2px solid white;
-		box-shadow: 0 5px 12px color-mix(in srgb, var(--color-brand) 50%, transparent);
+		box-shadow: 0 2px 8px color-mix(in srgb, var(--color-brand) 40%, transparent);
 	}
 
 	.windows {
@@ -91,52 +91,43 @@
 }
 
 @utility card {
-	@apply bg-card absolute rounded-[40px] border p-6;
+	@apply bg-card absolute rounded-xl border p-6;
 	box-shadow:
-		0 40px 50px -32px rgba(0, 0, 0, 0.05),
-		inset 0 0 20 rgba(255, 255, 255, 0.25);
-	backdrop-filter: blur(4px);
-
-	@supports (corner-shape: squircle) {
-		corner-shape: squircle;
-		@apply rounded-[64px];
-	}
+		0 4px 12px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(8px);
 }
 
 @utility card-rounded {
-	@apply rounded-[40px];
-	@supports (corner-shape: squircle) {
-		corner-shape: squircle;
-		@apply rounded-[64px];
-	}
+	@apply rounded-xl;
 }
 
 @utility text-linear {
-	background: linear-gradient(to right bottom, #0003 0%, #aaa1), linear-gradient(to right bottom, var(--color-brand) 40%, var(--color-brand-secondary));
+	background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-secondary) 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 }
 
 @utility bg-linear {
-	background: linear-gradient(to right bottom, var(--color-brand) 0%, var(--color-brand-secondary));
+	background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-secondary) 100%);
 	color: white;
 }
 
 @utility shadow {
-	box-shadow: 0 40px 50px -32px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 @utility btn-rounded {
-	@apply rounded-xl;
-	@supports (corner-shape: squircle) {
-		corner-shape: squircle;
-		@apply rounded-2xl;
-	}
+	@apply rounded-lg;
 }
 @utility brand-btn {
-	@apply bg-brand btn-rounded flex items-center gap-2 border-[1.5px] px-4 py-2 text-sm font-medium text-white;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	@apply bg-brand btn-rounded flex items-center gap-2 border-[1.5px] border-brand px-4 py-2 text-sm font-medium text-white transition-all duration-200;
+	box-shadow: 0 2px 8px rgba(30, 58, 95, 0.2);
+	&:hover {
+		box-shadow: 0 4px 12px rgba(30, 58, 95, 0.3);
+		transform: translateY(-1px);
+	}
 }
 
 @utility no-spinner {

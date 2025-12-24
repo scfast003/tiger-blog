@@ -131,10 +131,11 @@ export default function SocialButtons() {
 		if (!showStates[button.id]) return null
 
 		const commonProps = {
-			initial: { opacity: 0, scale: 0.6 } as const,
+			initial: { opacity: 0, scale: 0.95 } as const,
 			animate: { opacity: 1, scale: 1 } as const,
-			whileHover: { scale: 1.05 } as const,
-			whileTap: { scale: 0.95 } as const
+			transition: { duration: 0.2, ease: 'easeOut' } as const,
+			whileHover: { scale: 1.02, transition: { duration: 0.15 } } as const,
+			whileTap: { scale: 0.98, transition: { duration: 0.1 } } as const
 		}
 
 		const Icon = iconMap[button.type]
@@ -148,8 +149,8 @@ export default function SocialButtons() {
 					href={button.value}
 					target='_blank'
 					{...commonProps}
-					className={`font-averia flex items-center gap-2 rounded-xl border bg-[#070707] text-xl text-white ${!hasLabel ? 'p-1.5' : 'px-3 py-1.5'}`}
-					style={{ boxShadow: ' inset 0 0 12px rgba(255, 255, 255, 0.4)' }}>
+					className={`font-sans flex items-center gap-2 rounded-lg border bg-[#24292e] text-xl text-white transition-colors hover:bg-[#2c3136] ${!hasLabel ? 'p-1.5' : 'px-3 py-1.5'}`}
+					style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)' }}>
 					<Icon className={'size-8'} />
 					{hasLabel && button.label}
 				</motion.a>
@@ -177,7 +178,7 @@ export default function SocialButtons() {
 								setOpenDropdowns(prev => ({ ...prev, [button.id]: !prev[button.id] }))
 							}}
 							{...commonProps}
-							className='card btn relative rounded-xl p-1.5'>
+							className='card btn relative rounded-lg p-1.5 transition-colors hover:bg-white/80'>
 							<Icon className='size-8' />
 						</motion.button>
 						{typeof window !== 'undefined' &&
@@ -199,12 +200,12 @@ export default function SocialButtons() {
 												initial={{ opacity: 0, y: -8, scale: 0.95 }}
 												animate={{ opacity: 1, y: 0, scale: 1 }}
 												exit={{ opacity: 0, y: -8, scale: 0.95 }}
-												transition={{ duration: 0.2 }}
-												className='bg-card fixed z-50 rounded-2xl border p-4 backdrop-blur-xl'
+												transition={{ duration: 0.2, ease: 'easeOut' }}
+												className='bg-card fixed z-50 rounded-xl border p-4 backdrop-blur-xl'
 												style={{
 													top: buttonRefs.current[button.id] ? `${buttonRefs.current[button.id]!.getBoundingClientRect().bottom + 8}px` : '0px',
 													left: buttonRefs.current[button.id] ? `${buttonRefs.current[button.id]!.getBoundingClientRect().left}px` : '0px',
-													boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+													boxShadow: '0 4px 20px rgba(0, 0, 0, 0.12)'
 												}}>
 												<img src={button.value} alt='QR Code' className='h-48 w-48 rounded-lg object-cover' />
 											</motion.div>
@@ -226,7 +227,7 @@ export default function SocialButtons() {
 						})
 					}}
 					{...commonProps}
-					className='card btn relative rounded-xl p-1.5'>
+					className='card btn relative rounded-lg p-1.5 transition-colors hover:bg-white/80'>
 					<Icon className='size-8' />
 				</motion.button>
 			)
@@ -239,7 +240,7 @@ export default function SocialButtons() {
 					href={button.value}
 					target='_blank'
 					{...commonProps}
-					className='card relative flex items-center gap-2 rounded-xl px-3 py-2.5 font-medium whitespace-nowrap'>
+					className='card relative flex items-center gap-2 rounded-lg px-3 py-2.5 font-medium whitespace-nowrap transition-colors hover:bg-white/90'>
 					{hasLabel ? button.label : button.value}
 				</motion.a>
 			)
@@ -251,7 +252,7 @@ export default function SocialButtons() {
 				href={button.value}
 				target='_blank'
 				{...commonProps}
-				className={`card relative rounded-xl font-medium whitespace-nowrap ${hasLabel ? 'flex items-center gap-2 px-3 py-2.5' : 'p-1.5'}`}>
+				className={`card relative rounded-lg font-medium whitespace-nowrap transition-colors hover:bg-white/90 ${hasLabel ? 'flex items-center gap-2 px-3 py-2.5' : 'p-1.5'}`}>
 				<Icon className={iconSize} />
 				{hasLabel && button.label}
 			</motion.a>
